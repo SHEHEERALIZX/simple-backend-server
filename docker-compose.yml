@@ -3,6 +3,8 @@ services:
    mongo:
     container_name: mongodb_database
     image: mongo:latest
+    ports:
+      - 27017:27017
     volumes:
       - mongo_dedicated_volume:/data/db
 
