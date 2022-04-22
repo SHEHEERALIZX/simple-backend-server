@@ -1,13 +1,13 @@
-FROM node:latest
+FROM node:16.13.1
 ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY package.json .
 
 RUN npm install --production
 
 COPY . .
 EXPOSE 3000
 
-CMD [ "node", "index.js" ]
+CMD [ "node", " ./bin/www" ]
