@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mysql_server:
+    image: mysql:latest
+
+    ports:
+      - 3306:3306
+
+    environment:
+     MYSQL_ROOT_PASSWORD: pasword
+  
+
+
+  phpmyadmin_client:
+    image: phpmyadmin:latest
+
+    ports:
+      - 80:80
