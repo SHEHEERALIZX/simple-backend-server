@@ -10,7 +10,7 @@ services:
 
     environment:
      - MYSQL_ROOT_PASSWORD=root
-     - MYSQL_ROOT_PASSWORD=pasword
+     - MYSQL_ROOT_PASSWORD=password
   
 
 
@@ -22,7 +22,7 @@ services:
     environment:
      PMA_HOST: db
      PMA_USER: root
-     PMA_PASSWORD: root
+     PMA_PASSWORD: password
 
     ports:
       - 80:80
