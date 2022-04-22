@@ -15,7 +15,7 @@ services:
       - 3000:3000    
 
     environment:
-     URI: mongo://mongodb_database/test
+     URI: mongodb://mongodb_database/test
 
 
 volumes:
