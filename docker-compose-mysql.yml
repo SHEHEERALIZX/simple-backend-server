@@ -1,7 +1,7 @@
 version: '3'
 services:
   mysql_server:
-    container_name: mysql_server
+    # container_name: mysql_server
     image: mysql:latest
     restart: always
 
@@ -16,7 +16,7 @@ services:
 
 
   phpmyadmin_client:
-    container_name: phpmyadmin_frontend
+    # container_name: phpmyadmin_frontend
     image: phpmyadmin:latest
     restart: always
 
