@@ -16,6 +16,7 @@ services:
 
     environment:
      URI: mongodb://mongo/test
+     TOKEN: 5162314638:AAFrt6eYZ1rJxtmyfHzTj9q7_h1-H6ES5Ys
 
 
 volumes:

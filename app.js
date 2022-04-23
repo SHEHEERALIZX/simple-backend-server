@@ -1,4 +1,5 @@
 require('dotenv').config()
+const TelegramBot = require("node-telegram-bot-api");
 var session = require('express-session')
 const passport = require('passport')
 var createError = require('http-errors');
@@ -14,18 +15,44 @@ var indexRouter = require('./routes/index');
 let apiRouter  =  require('./routes/api_v3')
 
 var app = express();
-let cors = require('cors')
+// let cors = require('cors')
+const mongoose = require('mongoose');
+const { compare } = require('bcrypt');
 
 
 
+const token = process.env.TOKEN; // User Verification BOT
 
+const bot = new TelegramBot(token, { polling: true });
+
+
+
+const chatId = 5265243832
 
 // MongoDB setup Here
-const mongoose = require('mongoose')
-mongoose.connect(process.env.URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+
+const ConnectWithRetry = ()=>{
+  mongoose.connect(process.env.URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }).then(()=>{
+    const res = "Connected Successfully" 
+    bot.sendMessage(chatId, res);
+    console.log(res);
+  }).catch((error)=>{
+    const res = "Failed to Connect Retrying"
+    console.log(res);
+    bot.sendMessage(chatId, res);
+
+    setTimeout(ConnectWithRetry,5000)
+
+  })
+  
+
+}
+
+
+ConnectWithRetry()
 
 
 // app.use(cors)
