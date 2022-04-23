@@ -18,7 +18,7 @@ services:
      URI: mongodb://mongo123/test
      TOKEN: 5162314638:AAFrt6eYZ1rJxtmyfHzTj9q7_h1-H6ES5Ys
 
-    mongo123:
+   mongo123:
       image: mongo:latest
 
 
