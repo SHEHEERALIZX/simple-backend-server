@@ -1,7 +1,7 @@
 version: '3'
 services:
    mongo:
-    container_name: mongodb_database
+    # container_name: mongodb_database
     image: mongo:latest
     ports:
       - 27017:27017
@@ -9,7 +9,7 @@ services:
       - mongo_dedicated_volume:/data/db
 
    api_server:
-    container_name: myapp
+    # container_name: myapp
     build: .
     ports:
       - 3000:3000    
@@ -18,8 +18,8 @@ services:
      URI: mongodb://mongo123/test
      TOKEN: 5162314638:AAFrt6eYZ1rJxtmyfHzTj9q7_h1-H6ES5Ys
 
-   mongo123:
-      image: mongo:latest
+  #  mongo123:
+  #     image: mongo:latest
 
 
 
