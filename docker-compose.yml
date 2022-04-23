@@ -15,8 +15,15 @@ services:
       - 3000:3000    
 
     environment:
-     URI: mongodb://mongo/test
+     URI: mongodb://mongo123/test
      TOKEN: 5162314638:AAFrt6eYZ1rJxtmyfHzTj9q7_h1-H6ES5Ys
+
+    mongo123:
+      image: mongo:latest
+
+
+
+      
 
 
 volumes:
