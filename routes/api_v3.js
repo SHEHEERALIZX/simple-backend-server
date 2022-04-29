@@ -11,12 +11,15 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/persons", async function (req, res, next) {
+    console.log(req);
+
     let lists = await Employee.find().lean();
 
     res.send(lists);
 });
 
 router.post("/persons", cors(), async function (req, res, next) {
+    // console.log(req.body);
     let employee = {
         name: req.body.name,
         designation: req.body.designation,

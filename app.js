@@ -21,9 +21,9 @@ const { compare } = require('bcrypt');
 
 
 
-const token = process.env.TOKEN; // User Verification BOT
+// const token = process.env.TOKEN; // User Verification BOT
 
-const bot = new TelegramBot(token, { polling: true });
+// const bot = new TelegramBot(token, { polling: true });
 
 
 
@@ -37,12 +37,12 @@ const ConnectWithRetry = ()=>{
     useUnifiedTopology: true
   }).then(()=>{
     const res = "Connected Successfully" 
-    bot.sendMessage(chatId, res);
+    // bot.sendMessage(chatId, res);
     console.log(res);
   }).catch((error)=>{
     const res = "Failed to Connect Retrying"
     console.log(res);
-    bot.sendMessage(chatId, res);
+    // bot.sendMessage(chatId, res);
 
     setTimeout(ConnectWithRetry,5000)
 
