@@ -12,9 +12,16 @@ const employeeSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    age:{
+  
+    email:{
+        type:String,
+        required:true
+    },
+
+    PhoneNumber:{
         type:Number,
         required:true
+
     }
 
 
